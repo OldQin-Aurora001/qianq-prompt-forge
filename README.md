@@ -177,6 +177,7 @@ assets/brand/               # 站点标识（铃铛主标）
 LICENSE                     # MIT License
 README.md                   # 本文件
 DEVLOG.md                   # 开发大事记（对外公开版）
+FINGERPRINTS.md             # 发布件逐件校验清单（36 件字节数与 SHA-256）
 ```
 
 ---
