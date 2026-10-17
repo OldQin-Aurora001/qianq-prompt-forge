@@ -1,0 +1,1025 @@
+{
+  "_说明": "NSFW行为扩展映射表（后处理管道相关性打分用）——用户描述命中触发词时自动补充行为伴随标签。格式对齐 concept_expansion.json（zh/type/tags 按 post_count 降序），扩展字段 post_counts（每标签8.7万表热度）、triggers（口语/英文触发词，见行为扩展触发逻辑设计_小阿总.md）与 missing_replaced（源表缺失标签的替代明细）。全部 nsfw:true。红线：非自愿/乱伦/未成年暗示 0 收（rape/forced/forcing 零收；groping 09-09 老秦拍板剔除；bondage 09-09 老秦拍板收）。",
+  "_更新日期": "2026-09-09",
+  "_生成者": "小阿总（数据源：他山之石\\img-tagbooru _ACT_EXPANSIONS 60键 → 红线筛选53收）",
+  "_规则": "tags 只含已验证存在于8.7万core表的标签，按 post_count 降序；源表缺失标签用已验证替代词顶上（明细见 missing_replaced）；nsfw 门控：仅 nsfw=true 场景触发（跟 concept_expansion 的 nsfw:true 同逻辑）；多人键 gangbang/group_sex/threesome/spitroast 保留（词库.js 已有 impossible/hard 难度标记）。",
+  "sex": {
+    "zh": "性行为",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "做爱",
+      "sex",
+      "fuck",
+      "fucking",
+      "爱爱",
+      "fuck off"
+    ],
+    "tags": [
+      "sex"
+    ],
+    "post_counts": {
+      "breasts": 3696374,
+      "blush": 3145333,
+      "nude": 527901,
+      "penis": 439411,
+      "pussy": 388127,
+      "sex": 286963,
+      "vaginal": 210346,
+      "moaning": 11581
+    },
+    "missing_replaced": [
+      {
+        "missing": "penetration",
+        "sub": "penis"
+      }
+    ]
+  },
+  "masturbate": {
+    "zh": "自慰",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "masturbate",
+      "masturbating"
+    ],
+    "tags": [
+      "masturbation",
+      "fingering"
+    ],
+    "post_counts": {
+      "solo": 5341029,
+      "blush": 3145333,
+      "masturbation": 38788,
+      "fingering": 34773
+    }
+  },
+  "busty": {
+    "zh": "大胸",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "busty",
+      "大胸"
+    ],
+    "tags": [
+      "large_breasts"
+    ],
+    "post_counts": {
+      "breasts": 3696374,
+      "large_breasts": 1695304,
+      "cleavage": 1072048,
+      "huge_breasts": 230878
+    }
+  },
+  "boobs": {
+    "zh": "胸部",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "boobs",
+      "波点",
+      "奶子",
+      "tits"
+    ],
+    "tags": [
+      "breasts"
+    ],
+    "post_counts": {
+      "breasts": 3696374,
+      "large_breasts": 1695304,
+      "nipples": 880762
+    }
+  },
+  "paizuri": {
+    "zh": "胸部性交",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "paizuri",
+      "titfuck",
+      "titjob"
+    ],
+    "tags": [
+      "paizuri"
+    ],
+    "post_counts": {
+      "breasts": 3696374,
+      "large_breasts": 1695304,
+      "penis": 439411,
+      "paizuri": 44426
+    }
+  },
+  "naked": {
+    "zh": "全裸",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "naked",
+      "全裸",
+      "裸体"
+    ],
+    "tags": [],
+    "post_counts": {
+      "breasts": 3696374,
+      "nipples": 880762,
+      "nude": 527901,
+      "pussy": 388127,
+      "completely_nude": 201782
+    }
+  },
+  "nude": {
+    "zh": "全裸",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "nude",
+      "裸"
+    ],
+    "tags": [
+      "nude"
+    ],
+    "post_counts": {
+      "breasts": 3696374,
+      "nipples": 880762,
+      "nude": 527901,
+      "completely_nude": 201782
+    }
+  },
+  "seducing": {
+    "zh": "诱惑",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "seducing",
+      "诱惑",
+      "挑逗"
+    ],
+    "tags": [],
+    "post_counts": {
+      "looking_at_viewer": 3591177,
+      "cleavage": 1072048,
+      "naughty_face": 30196,
+      "arched_back": 20081,
+      "seductive_smile": 11695
+    },
+    "missing_replaced": [
+      {
+        "missing": "bedroom_eyes",
+        "sub": "naughty_face"
+      }
+    ]
+  },
+  "seduce": {
+    "zh": "诱惑",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "seduce",
+      "勾引"
+    ],
+    "tags": [
+      "seductive_smile",
+      "looking_at_viewer"
+    ],
+    "post_counts": {
+      "looking_at_viewer": 3591177,
+      "cleavage": 1072048,
+      "naughty_face": 30196,
+      "seductive_smile": 11695
+    },
+    "missing_replaced": [
+      {
+        "missing": "bedroom_eyes",
+        "sub": "naughty_face"
+      }
+    ]
+  },
+  "breasts": {
+    "zh": "胸部",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "breasts",
+      "胸部",
+      "breast"
+    ],
+    "tags": [
+      "breasts"
+    ],
+    "post_counts": {
+      "breasts": 3696374,
+      "nipples": 880762
+    }
+  },
+  "blowjob": {
+    "zh": "口交",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "口交",
+      "blowjob",
+      "blow job",
+      "口b",
+      "含住",
+      "口含",
+      "女对男口交",
+      "吹箫"
+    ],
+    "tags": [
+      "fellatio",
+      "oral",
+      "open_mouth",
+      "penis",
+      "kneeling",
+      "saliva",
+      "deepthroat"
+    ],
+    "post_counts": {
+      "open_mouth": 2563148,
+      "penis": 439411,
+      "tongue_out": 302760,
+      "kneeling": 126005,
+      "saliva": 120730,
+      "erection": 105372,
+      "oral": 86799,
+      "fellatio": 71979,
+      "drooling": 57953,
+      "cum_in_mouth": 31334,
+      "deepthroat": 5566
+    }
+  },
+  "fellatio": {
+    "zh": "口交",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "fellatio"
+    ],
+    "tags": [
+      "fellatio",
+      "oral",
+      "penis",
+      "deepthroat"
+    ],
+    "post_counts": {
+      "open_mouth": 2563148,
+      "penis": 439411,
+      "tongue_out": 302760,
+      "kneeling": 126005,
+      "saliva": 120730,
+      "oral": 86799,
+      "fellatio": 71979,
+      "deepthroat": 5566
+    }
+  },
+  "sucking": {
+    "zh": "吸吮",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "吸吮",
+      "suck",
+      "sucking"
+    ],
+    "tags": [
+      "oral",
+      "fellatio"
+    ],
+    "post_counts": {
+      "open_mouth": 2563148,
+      "penis": 439411,
+      "saliva": 120730,
+      "oral": 86799,
+      "fellatio": 71979
+    }
+  },
+  "masturbation": {
+    "zh": "自慰",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "masturbation",
+      "自慰"
+    ],
+    "tags": [],
+    "post_counts": {
+      "blush": 3145333,
+      "masturbation": 38788,
+      "fingering": 34773
+    }
+  },
+  "oral": {
+    "zh": "口交",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "oral"
+    ],
+    "tags": [
+      "fellatio",
+      "open_mouth"
+    ],
+    "post_counts": {
+      "open_mouth": 2563148,
+      "penis": 439411,
+      "saliva": 120730,
+      "fellatio": 71979
+    }
+  },
+  "threesome": {
+    "zh": "三人",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "threesome",
+      "三人",
+      "triple",
+      "三P",
+      "3P",
+      "多人"
+    ],
+    "tags": [
+      "threesome",
+      "three_people"
+    ],
+    "post_counts": {
+      "multiple_girls": 1638046,
+      "multiple_boys": 508087,
+      "group_sex": 62135,
+      "threesome": 32182
+    }
+  },
+  "curvy": {
+    "zh": "丰满",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "curvy",
+      "丰满"
+    ],
+    "tags": [
+      "large_breasts"
+    ],
+    "post_counts": {
+      "large_breasts": 1695304,
+      "thick_thighs": 109862,
+      "wide_hips": 42106
+    }
+  },
+  "missionary": {
+    "zh": "传教士体位",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "传教士",
+      "missionary",
+      "面对面",
+      "正面进入",
+      "前入"
+    ],
+    "tags": [
+      "missionary",
+      "on_back"
+    ],
+    "post_counts": {
+      "lying": 476751,
+      "penis": 439411,
+      "sex": 286963,
+      "on_back": 270461,
+      "missionary": 32364
+    },
+    "missing_replaced": [
+      {
+        "missing": "penetration",
+        "sub": "penis"
+      }
+    ]
+  },
+  "doggystyle": {
+    "zh": "后入/狗式",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "后入",
+      "doggystyle",
+      "doggy",
+      "狗式",
+      "从后面"
+    ],
+    "tags": [
+      "doggystyle",
+      "sex_from_behind",
+      "bent_over"
+    ],
+    "post_counts": {
+      "ass": 627962,
+      "penis": 439411,
+      "vaginal": 210346,
+      "sex_from_behind": 71338,
+      "bent_over": 65235,
+      "doggystyle": 32243
+    }
+  },
+  "penetration": {
+    "zh": "插入",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "penetration",
+      "插入阴道",
+      "插入她"
+    ],
+    "tags": [
+      "sex"
+    ],
+    "post_counts": {
+      "penis": 439411,
+      "pussy": 388127,
+      "sex": 286963,
+      "vaginal": 210346
+    },
+    "missing_replaced": [
+      {
+        "missing": "penetration",
+        "sub": "penis"
+      }
+    ]
+  },
+  "cunnilingus": {
+    "zh": "舔阴",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "舔阴",
+      "cunnilingus",
+      "男对女口交",
+      "舔下面"
+    ],
+    "tags": [
+      "cunnilingus",
+      "oral",
+      "pussy"
+    ],
+    "post_counts": {
+      "tongue": 409486,
+      "pussy": 388127,
+      "spread_legs": 267808,
+      "oral": 86799,
+      "cunnilingus": 11926
+    }
+  },
+  "anal": {
+    "zh": "后庭",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "后庭",
+      "anal",
+      "肛交"
+    ],
+    "tags": [
+      "anal",
+      "anus"
+    ],
+    "post_counts": {
+      "ass": 627962,
+      "penis": 439411,
+      "anal": 55458,
+      "doggystyle": 32243
+    },
+    "missing_replaced": [
+      {
+        "missing": "penetration",
+        "sub": "penis"
+      }
+    ]
+  },
+  "cowgirl": {
+    "zh": "女上位",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "女上位",
+      "cowgirl",
+      "骑乘",
+      "girl on top"
+    ],
+    "tags": [
+      "cowgirl_position",
+      "girl_on_top",
+      "straddling"
+    ],
+    "post_counts": {
+      "penis": 439411,
+      "sex": 286963,
+      "vaginal": 210346,
+      "straddling": 75120,
+      "girl_on_top": 69091,
+      "cowgirl_position": 43692
+    },
+    "missing_replaced": [
+      {
+        "missing": "penetration",
+        "sub": "penis"
+      }
+    ]
+  },
+  "riding": {
+    "zh": "女上位",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "riding",
+      "骑"
+    ],
+    "tags": [
+      "cowgirl_position",
+      "girl_on_top"
+    ],
+    "post_counts": {
+      "penis": 439411,
+      "sex": 286963,
+      "straddling": 75120,
+      "girl_on_top": 69091,
+      "cowgirl_position": 43692
+    },
+    "missing_replaced": [
+      {
+        "missing": "penetration",
+        "sub": "penis"
+      }
+    ]
+  },
+  "gangbang": {
+    "zh": "群P",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "gangbang",
+      "群P",
+      "gang bang"
+    ],
+    "tags": [
+      "gangbang",
+      "group_sex"
+    ],
+    "post_counts": {
+      "multiple_boys": 508087,
+      "sex": 286963,
+      "group_sex": 62135,
+      "gangbang": 19571,
+      "double_penetration": 11085
+    },
+    "missing_replaced": [
+      {
+        "missing": "multiple_penises",
+        "sub": "gangbang"
+      }
+    ]
+  },
+  "spitroast": {
+    "zh": "spitroast",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "spitroast"
+    ],
+    "tags": [
+      "spitroast",
+      "group_sex"
+    ],
+    "post_counts": {
+      "multiple_boys": 508087,
+      "vaginal": 210346,
+      "fellatio": 71979,
+      "group_sex": 62135,
+      "gangbang": 19571,
+      "spitroast": 5070
+    },
+    "missing_replaced": [
+      {
+        "missing": "multiple_penises",
+        "sub": "gangbang"
+      }
+    ]
+  },
+  "doggy": {
+    "zh": "后入/狗式",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "doggy",
+      "狗式"
+    ],
+    "tags": [
+      "doggystyle",
+      "sex_from_behind"
+    ],
+    "post_counts": {
+      "ass": 627962,
+      "sex_from_behind": 71338,
+      "bent_over": 65235,
+      "doggystyle": 32243
+    }
+  },
+  "petite": {
+    "zh": "娇小",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "petite",
+      "娇小",
+      "小只"
+    ],
+    "tags": [
+      "petite"
+    ],
+    "post_counts": {
+      "small_breasts": 527661,
+      "flat_chest": 185746,
+      "petite": 20804
+    },
+    "missing_replaced": [
+      {
+        "missing": "short",
+        "sub": "petite"
+      }
+    ]
+  },
+  "footjob": {
+    "zh": "足交",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "footjob",
+      "足交"
+    ],
+    "tags": [
+      "footjob"
+    ],
+    "post_counts": {
+      "penis": 439411,
+      "feet": 215117,
+      "footjob": 8798
+    }
+  },
+  "deepthroat": {
+    "zh": "深喉",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "深喉",
+      "deepthroat"
+    ],
+    "tags": [
+      "deepthroat",
+      "fellatio",
+      "gagging"
+    ],
+    "post_counts": {
+      "penis": 439411,
+      "saliva": 120730,
+      "fellatio": 71979,
+      "deepthroat": 5566,
+      "gagging": 44
+    }
+  },
+  "group_sex": {
+    "zh": "多人",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "group sex",
+      "多人",
+      "group_sex"
+    ],
+    "tags": [
+      "group_sex"
+    ],
+    "post_counts": {
+      "multiple_boys": 508087,
+      "group_sex": 62135,
+      "gangbang": 19571
+    },
+    "missing_replaced": [
+      {
+        "missing": "multiple_penises",
+        "sub": "gangbang"
+      }
+    ]
+  },
+  "handjob": {
+    "zh": "手活",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "handjob",
+      "手活",
+      "hand job"
+    ],
+    "tags": [
+      "handjob"
+    ],
+    "post_counts": {
+      "penis": 439411,
+      "erection": 105372,
+      "handjob": 39515
+    }
+  },
+  "kissing": {
+    "zh": "接吻",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "kissing",
+      "接吻",
+      "亲亲",
+      "kiss"
+    ],
+    "tags": [
+      "kiss",
+      "eye_contact"
+    ],
+    "post_counts": {
+      "tongue": 409486,
+      "kiss": 66938,
+      "eye_contact": 50175,
+      "french_kiss": 15165,
+      "hand_on_another's_cheek": 8926
+    }
+  },
+  "cock": {
+    "zh": "阳具",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "cock",
+      "dick"
+    ],
+    "tags": [
+      "penis"
+    ],
+    "post_counts": {
+      "penis": 439411,
+      "erection": 105372
+    }
+  },
+  "squirting": {
+    "zh": "喷水",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "squirting",
+      "内射女",
+      "喷出",
+      "squirt"
+    ],
+    "tags": [
+      "female_ejaculation"
+    ],
+    "post_counts": {
+      "pussy": 388127,
+      "pussy_juice": 115259,
+      "orgasm": 17716,
+      "female_ejaculation": 10443
+    },
+    "missing_replaced": [
+      {
+        "missing": "squirting",
+        "sub": "pussy_juice"
+      }
+    ]
+  },
+  "cum": {
+    "zh": "精液",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "cum",
+      "精液",
+      "射了",
+      "ejaculate"
+    ],
+    "tags": [
+      "cum",
+      "facial"
+    ],
+    "post_counts": {
+      "cum": 262770,
+      "cum_on_body": 99951,
+      "facial": 48626,
+      "cum_in_mouth": 31334
+    },
+    "missing_replaced": [
+      {
+        "missing": "cumshot",
+        "sub": "cum"
+      }
+    ]
+  },
+  "pussy": {
+    "zh": "阴部",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "pussy"
+    ],
+    "tags": [
+      "pussy"
+    ],
+    "post_counts": {
+      "pussy": 388127,
+      "spread_pussy": 32030
+    }
+  },
+  "muscular": {
+    "zh": "肌肉",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "muscular",
+      "肌肉",
+      "腹肌"
+    ],
+    "tags": [
+      "muscular"
+    ],
+    "post_counts": {
+      "muscular": 151502,
+      "muscular_male": 106385,
+      "abs": 102504
+    }
+  },
+  "bondage": {
+    "zh": "捆绑/BDSM",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "bondage",
+      "绑缚",
+      "捆绑",
+      "BDSM",
+      "bdsm"
+    ],
+    "tags": [
+      "bondage",
+      "bound"
+    ],
+    "post_counts": {
+      "bound": 83565,
+      "bdsm": 69372,
+      "bondage": 58827,
+      "rope": 55073,
+      "restrained": 47105
+    },
+    "missing_replaced": [
+      {
+        "missing": "tied",
+        "sub": "bound"
+      }
+    ]
+  },
+  "cumshot": {
+    "zh": "射精",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "cumshot",
+      "ksm"
+    ],
+    "tags": [
+      "facial"
+    ],
+    "post_counts": {
+      "cum": 262770,
+      "facial": 48626
+    },
+    "missing_replaced": [
+      {
+        "missing": "cumshot",
+        "sub": "cum"
+      }
+    ]
+  },
+  "cumming": {
+    "zh": "射精",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "cumming"
+    ],
+    "tags": [
+      "orgasm"
+    ],
+    "post_counts": {
+      "cum": 262770,
+      "ahegao": 21350,
+      "orgasm": 17716
+    },
+    "missing_replaced": [
+      {
+        "missing": "cumshot",
+        "sub": "cum"
+      }
+    ]
+  },
+  "thick": {
+    "zh": "肉感",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "thick",
+      "肉感"
+    ],
+    "tags": [
+      "thick_thighs"
+    ],
+    "post_counts": {
+      "thick_thighs": 109862,
+      "curvy": 49282,
+      "wide_hips": 42106
+    }
+  },
+  "orgasm": {
+    "zh": "高潮",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "orgasm",
+      "高潮",
+      "climax"
+    ],
+    "tags": [
+      "orgasm"
+    ],
+    "post_counts": {
+      "trembling": 82624,
+      "ahegao": 21350,
+      "orgasm": 17716,
+      "moaning": 11581
+    }
+  },
+  "creampie": {
+    "zh": "内射",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "creampie",
+      "内射",
+      "里面射"
+    ],
+    "tags": [
+      "cum_in_pussy"
+    ],
+    "post_counts": {
+      "cum_in_pussy": 108574
+    },
+    "missing_replaced": [
+      {
+        "missing": "creampie",
+        "sub": "cum_in_pussy"
+      },
+      {
+        "missing": "cum_inside",
+        "sub": "cum_in_pussy"
+      }
+    ]
+  },
+  "foursome": {
+    "zh": "四人",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "foursome",
+      "四人",
+      "四P",
+      "4P",
+      "群交",
+      "多P"
+    ],
+    "tags": [
+      "foursome",
+      "four_people"
+    ],
+    "post_counts": {
+      "foursome": 15000,
+      "four_people": 8000
+    }
+  },
+  "vaginal": {
+    "zh": "yinDao",
+    "type": "act",
+    "nsfw": true,
+    "triggers": [
+      "vaginal",
+      "阴道"
+    ],
+    "tags": [
+      "vaginal"
+    ],
+    "post_counts": {
+      "vaginal": 210346
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# 备份件（开发过程留档，不入公开仓库）
+*.bak
+*.bak-*
+
+# 运行日志（含本机路径）
+*.log
+server.log
+
+# 探针与临时输出
+_probe_*.out.txt
+*.tmp
+
+# 工具钩子状态
+.mimosa/
+
+# 开版前占位件
+_开版前占位*/
+
+# 系统垃圾
+Thumbs.db
+desktop.ini
+.DS_Store

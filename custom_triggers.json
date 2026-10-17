@@ -1,0 +1,60 @@
+{
+  "_说明": "自定义触发词白名单——这些词不在Danbooru词汇表里，但属于LoRA角色触发词或SD/Pony专用标签，白名单校验时必须单独放行，不能误杀。",
+  "_更新日期": "2026-09-08",
+  "角色触发词": {
+    "yeqianqian": {
+      "zh": "浅浅动画",
+      "type": "lora_trigger",
+      "适用": "动漫系 Pony/WAI/R妈",
+      "完整触发串": "yeqianqian, black hair, wavy hair, medium hair, air bangs, round glasses, silver hoop earrings, pale skin, slim, large breasts"
+    },
+    "yeqianqian_real": {
+      "zh": "浅浅真人",
+      "type": "lora_trigger",
+      "适用": "真人/半写实系 R妈/193/RealVis（真人向Pony也行）",
+      "完整触发串": "yeqianqian_real, black hair, wavy hair, medium hair, air bangs, round glasses, silver hoop earrings, pale skin, slim, large breasts"
+    }
+  },
+  "SD/Pony专用标签": {
+    "_说明": "这些是SD/Pony体系的评分/评级/质量词，不是Danbooru标签，由公式引擎自动加，LLM不需要输出，但白名单校验时如果遇到了也要放行，不能误杀。",
+    "score_9": { "zh": "Pony评分9分", "type": "pony_score" },
+    "score_8_up": { "zh": "Pony评分8分+", "type": "pony_score" },
+    "score_7_up": { "zh": "Pony评分7分+", "type": "pony_score" },
+    "score_6_up": { "zh": "Pony评分6分+", "type": "pony_score" },
+    "score_5_up": { "zh": "Pony评分5分+", "type": "pony_score" },
+    "score_4_up": { "zh": "Pony评分4分+", "type": "pony_score" },
+    "rating:safe": { "zh": "Pony评级-安全", "type": "pony_rating" },
+    "rating:questionable": { "zh": "Pony评级-可疑", "type": "pony_rating" },
+    "rating:explicit": { "zh": "Pony评级-露骨", "type": "pony_rating" },
+    "masterpiece": { "zh": "杰作", "type": "sd_quality" },
+    "best quality": { "zh": "最佳质量", "type": "sd_quality" },
+    "ultra-detailed": { "zh": "超精细", "type": "sd_quality" },
+    "absurdres": { "zh": "超高分辨率", "type": "sd_quality" },
+    "highres": { "zh": "高分辨率", "type": "sd_quality" }
+  },
+  "语义修正映射": {
+    "_说明": "LLM可能输出的非标准标签，自动映射到Danbooru标准标签。v2.0新增：牛总A/B测试发现的Top新口癖修正（vocabulary-grounded后模型开始用标准词形造词，这些是二级错误，映射层一把修）。",
+    "_新增日期": "2026-09-09",
+    "_新增来源": "牛总候选A_AB测试报告，Top新口癖约10个，已验证目标词存在于8.7万词表",
+    "kissing": "kiss",
+    "hugging": "hug",
+    "smiling": "smile",
+    "crying": "cry",
+    "blushing": "blush",
+    "looking_at_viewer": "looking at viewer",
+    "long_hair": "long hair",
+    "black_hair": "black hair",
+    "blue_eyes": "blue eyes",
+    "white_dress": "white dress",
+    "indoor": "indoors",
+    "maid_dress": "maid_apron",
+    "lacy_underwear": "lace",
+    "cherry_blossom_tree": "cherry_blossoms",
+    "cup_of_coffee": "cup",
+    "inserting_from_behind": "sex_from_behind",
+    "slim_body": "narrow_waist",
+    "inserting_into": "sex",
+    "slim": "narrow_waist",
+    "thin": "narrow_waist"
+  }
+}

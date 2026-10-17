@@ -1,0 +1,660 @@
+{
+  "_说明": "概念扩展映射表（后处理管道第7步用）——LLM输出概念标签时自动补充关联Danbooru标签。tags按post_count降序，每个标签逐一验证存在于8.7万core表，不存在的剔除。非自愿/乱伦/未成年暗示 0 收。",
+  "_更新日期": "2026-09-09",
+  "_生成者": "牛来(GLM-5.3-Flash)任务6(20概念) → 大阿总 扩充(75概念：img源66+保留牛来独有7+NSFW2)",
+  "_规则": "概念扩展是补充不是替换：扩展标签标蓝,用户可取消;NSFW概念标nsfw:true正经模式不触发;标签逐条验证,不存在的红线不收;非自愿/乱伦/未成年暗示 0 收;角色触发词(yeqianqian/yeqianqian_real)不入概念扩展,在custom_triggers.json。",
+  "nun": {
+    "zh": "修女",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "nun",
+      "veil"
+    ]
+  },
+  "priest": {
+    "zh": "牧师",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "priest",
+      "cassock"
+    ]
+  },
+  "witch": {
+    "zh": "女巫",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "witch",
+      "witch_hat"
+    ]
+  },
+  "knight": {
+    "zh": "骑士",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "knight",
+      "armor"
+    ]
+  },
+  "maid": {
+    "zh": "女仆",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "maid"
+    ]
+  },
+  "catgirl": {
+    "zh": "猫娘",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "catgirl",
+      "cat_ears"
+    ]
+  },
+  "foxgirl": {
+    "zh": "狐娘",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "foxgirl",
+      "fox_ears"
+    ]
+  },
+  "elf": {
+    "zh": "精灵",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "elf",
+      "pointy_ears"
+    ]
+  },
+  "vampire": {
+    "zh": "吸血鬼",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "vampire",
+      "fangs"
+    ]
+  },
+  "angel": {
+    "zh": "天使",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "angel",
+      "halo"
+    ]
+  },
+  "demon": {
+    "zh": "恶魔",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "demon",
+      "horns"
+    ]
+  },
+  "zombie": {
+    "zh": "僵尸",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "zombie"
+    ]
+  },
+  "succubus": {
+    "zh": "魅魔",
+    "type": "identity",
+    "nsfw": true,
+    "tags": [
+      "succubus",
+      "horns"
+    ]
+  },
+  "orc": {
+    "zh": "兽人",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "orc",
+      "tusks"
+    ]
+  },
+  "mermaid": {
+    "zh": "美人鱼",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "mermaid",
+      "fish_tail"
+    ]
+  },
+  "ninja": {
+    "zh": "忍者",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "ninja",
+      "mask"
+    ]
+  },
+  "samurai": {
+    "zh": "武士",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "samurai",
+      "kimono"
+    ]
+  },
+  "cowboy": {
+    "zh": "牛仔",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "cowboy",
+      "cowboy_hat"
+    ]
+  },
+  "pirate": {
+    "zh": "海盗",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "pirate",
+      "eyepatch"
+    ]
+  },
+  "doctor": {
+    "zh": "医生",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "doctor",
+      "stethoscope"
+    ]
+  },
+  "nurse": {
+    "zh": "护士",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "nurse",
+      "white_apron"
+    ]
+  },
+  "bride": {
+    "zh": "新娘",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "bride",
+      "veil"
+    ]
+  },
+  "schoolgirl": {
+    "zh": "女学生",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "schoolgirl"
+    ]
+  },
+  "sailor": {
+    "zh": "水手",
+    "type": "identity",
+    "nsfw": false,
+    "tags": [
+      "sailor"
+    ]
+  },
+  "incubus": {
+    "zh": "梦魇男魅魔",
+    "type": "identity",
+    "nsfw": true,
+    "tags": [
+      "incubus",
+      "horns"
+    ]
+  },
+  "emo": {
+    "zh": "情绪/暗黑风",
+    "type": "style",
+    "nsfw": false,
+    "tags": [
+      "emo"
+    ]
+  },
+  "goth": {
+    "zh": "哥特",
+    "type": "style",
+    "nsfw": false,
+    "tags": [
+      "goth"
+    ]
+  },
+  "punk": {
+    "zh": "朋克",
+    "type": "style",
+    "nsfw": false,
+    "tags": [
+      "punk"
+    ]
+  },
+  "couple": {
+    "zh": "情侣",
+    "type": "style",
+    "nsfw": false,
+    "tags": [
+      "couple",
+      "holding_hands"
+    ]
+  },
+  "lovers": {
+    "zh": "恋人",
+    "type": "style",
+    "nsfw": false,
+    "tags": [
+      "lovers"
+    ]
+  },
+  "romantic": {
+    "zh": "浪漫",
+    "type": "style",
+    "nsfw": false,
+    "tags": [
+      "romantic"
+    ]
+  },
+  "kitchen": {
+    "zh": "厨房",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "kitchen",
+      "stove"
+    ]
+  },
+  "baking": {
+    "zh": "烘焙",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "baking"
+    ]
+  },
+  "bedroom": {
+    "zh": "卧室",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "bedroom",
+      "bed"
+    ]
+  },
+  "bathroom": {
+    "zh": "浴室",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "bathroom",
+      "bathtub"
+    ]
+  },
+  "classroom": {
+    "zh": "教室",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "classroom",
+      "chalkboard"
+    ]
+  },
+  "office": {
+    "zh": "办公室",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "office"
+    ]
+  },
+  "library": {
+    "zh": "图书馆",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "library",
+      "desk"
+    ]
+  },
+  "gym": {
+    "zh": "健身房",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "gym"
+    ]
+  },
+  "cathedral": {
+    "zh": "大教堂",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "cathedral"
+    ]
+  },
+  "park": {
+    "zh": "公园",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "park",
+      "bench"
+    ]
+  },
+  "beach": {
+    "zh": "海滩",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "beach"
+    ]
+  },
+  "lake": {
+    "zh": "湖",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "lake",
+      "outdoors",
+      "water"
+    ]
+  },
+  "river": {
+    "zh": "河",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "river",
+      "outdoors",
+      "water"
+    ]
+  },
+  "ocean": {
+    "zh": "海洋",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "ocean",
+      "outdoors",
+      "water"
+    ]
+  },
+  "mountain": {
+    "zh": "山",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "mountain"
+    ]
+  },
+  "field": {
+    "zh": "田野",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "field",
+      "grass"
+    ]
+  },
+  "forest": {
+    "zh": "森林",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "forest",
+      "tree"
+    ]
+  },
+  "garden": {
+    "zh": "花园",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "garden",
+      "flower",
+      "outdoors"
+    ]
+  },
+  "alley": {
+    "zh": "小巷",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "alley"
+    ]
+  },
+  "city": {
+    "zh": "城市",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "city",
+      "building"
+    ]
+  },
+  "rooftop": {
+    "zh": "天台",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "rooftop"
+    ]
+  },
+  "train": {
+    "zh": "火车",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "train"
+    ]
+  },
+  "storm": {
+    "zh": "暴风雨",
+    "type": "scene_atmosphere",
+    "nsfw": false,
+    "tags": [
+      "storm",
+      "lightning"
+    ]
+  },
+  "rain": {
+    "zh": "雨",
+    "type": "scene_atmosphere",
+    "nsfw": false,
+    "tags": [
+      "rain",
+      "umbrella"
+    ]
+  },
+  "snow": {
+    "zh": "雪",
+    "type": "scene_atmosphere",
+    "nsfw": false,
+    "tags": [
+      "snow"
+    ]
+  },
+  "sunset": {
+    "zh": "日落",
+    "type": "scene_atmosphere",
+    "nsfw": false,
+    "tags": [
+      "sunset"
+    ]
+  },
+  "night": {
+    "zh": "夜晚",
+    "type": "scene_atmosphere",
+    "nsfw": false,
+    "tags": [
+      "night"
+    ]
+  },
+  "spring": {
+    "zh": "春",
+    "type": "scene_atmosphere",
+    "nsfw": false,
+    "tags": [
+      "spring",
+      "cherry_blossoms"
+    ]
+  },
+  "summer": {
+    "zh": "夏",
+    "type": "scene_atmosphere",
+    "nsfw": false,
+    "tags": [
+      "summer"
+    ]
+  },
+  "winter": {
+    "zh": "冬",
+    "type": "scene_atmosphere",
+    "nsfw": false,
+    "tags": [
+      "winter",
+      "snow"
+    ]
+  },
+  "swimming": {
+    "zh": "游泳",
+    "type": "activity",
+    "nsfw": false,
+    "tags": [
+      "swimming",
+      "splashing"
+    ]
+  },
+  "swimsuit": {
+    "zh": "泳装",
+    "type": "activity",
+    "nsfw": false,
+    "tags": [
+      "swimsuit"
+    ]
+  },
+  "bikini": {
+    "zh": "比基尼",
+    "type": "activity",
+    "nsfw": false,
+    "tags": [
+      "bikini"
+    ]
+  },
+  "festival": {
+    "zh": "祭典",
+    "type": "activity",
+    "nsfw": false,
+    "tags": [
+      "festival",
+      "lantern"
+    ]
+  },
+  "wedding": {
+    "zh": "婚礼",
+    "type": "activity",
+    "nsfw": false,
+    "tags": [
+      "wedding"
+    ]
+  },
+  "maid_nsfw": {
+    "zh": "NSFW女仆",
+    "type": "identity",
+    "nsfw": true,
+    "tags": [
+      "maid_nsfw"
+    ]
+  },
+  "stockings": {
+    "zh": "丝袜/过膝袜/吊带袜",
+    "type": "identity",
+    "nsfw": true,
+    "tags": [
+      "stockings"
+    ]
+  },
+  "school_uniform": {
+    "zh": "学生/校服",
+    "type": "identity_clothing",
+    "nsfw": false,
+    "tags": [
+      "school_uniform",
+      "pleated_skirt"
+    ]
+  },
+  "rainy_night": {
+    "zh": "雨夜",
+    "type": "scene_atmosphere",
+    "nsfw": false,
+    "tags": [
+      "rainy_night",
+      "umbrella",
+      "night"
+    ]
+  },
+  "city_night": {
+    "zh": "城市夜景",
+    "type": "scene_atmosphere",
+    "nsfw": false,
+    "tags": [
+      "city_night",
+      "night"
+    ]
+  },
+  "cafe": {
+    "zh": "咖啡馆",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "cafe",
+      "cup"
+    ]
+  },
+  "swimming_pool": {
+    "zh": "游泳池",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "swimming_pool",
+      "swimsuit",
+      "water"
+    ]
+  },
+  "flower_field": {
+    "zh": "花田",
+    "type": "scene",
+    "nsfw": false,
+    "tags": [
+      "flower_field",
+      "flower"
+    ]
+  },
+  "starry_sky": {
+    "zh": "星空",
+    "type": "scene_atmosphere",
+    "nsfw": false,
+    "tags": [
+      "starry_sky",
+      "night"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- 家书铃铛 · 主标（合稿：饱满钟形+实心提钮+铃唇外扩/缝+铃舌+铃左信右独立呼吸+描边V信封）
+       铃铛/描边用 currentColor（浅色背景为墨黑，深色背景置白），信封固定暖黄 #F2C46B；背景透明。
+       整数源稿尺寸：viewBox 512×512。BRAND-MARK-01 / 2026-10-17 -->
+  <g transform="translate(256 256) scale(1.08) translate(-256 -256)">
+    <g transform="translate(4,14)">
+      <!-- 实心提钮 -->
+      <circle cx="175" cy="86" r="18" fill="currentColor"/>
+      <!-- 颈 -->
+      <rect x="167" y="102" width="16" height="32" rx="8" fill="currentColor"/>
+      <!-- 饱满钟形（圆肩 → 裙摆外扩） -->
+      <path fill="currentColor" d="M175 134 C215 134 242 170 250 215 C257 255 262 290 262 320 L88 320 C88 290 93 255 100 215 C108 170 135 134 175 134 Z"/>
+      <!-- 铃唇：喇叭口（外扩18、缝22） -->
+      <rect x="70" y="342" width="210" height="28" rx="14" fill="currentColor"/>
+      <!-- 铃舌 -->
+      <circle cx="175" cy="398" r="17" fill="currentColor"/>
+      <!-- 信封：独立斜躺右侧，高≈铃身49%，描边 V -->
+      <g transform="rotate(-12 360 305)">
+        <rect x="294" y="259" width="132" height="92" rx="12" fill="#F2C46B" stroke="currentColor" stroke-width="13" stroke-linejoin="round"/>
+        <path d="M294 259 L360 318 L426 259" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+  </g>
+</svg>
